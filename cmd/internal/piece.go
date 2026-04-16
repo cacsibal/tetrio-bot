@@ -2,6 +2,8 @@ package internal
 
 type Piece int
 
+const NumPieces = 7
+
 const (
 	I Piece = iota
 	O
@@ -20,4 +22,8 @@ func (p Piece) String() string {
 	}
 
 	return []string{"I", "O", "T", "L", "J", "S", "Z"}[p]
+}
+
+func IsOkPiece(p Piece) bool {
+	return uint8(p) < NumPieces
 }

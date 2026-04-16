@@ -63,12 +63,12 @@ func NoneMove() Move {
 	return Move{data: 0}
 }
 
-func (m Move) X() int {
-	return int((m.data >> 6) & 0xF)
+func (m Move) X() int32 {
+	return int32((m.data >> 6) & 0xF)
 }
 
-func (m Move) Y() int {
-	return int(m.data & 0x3F)
+func (m Move) Y() int32 {
+	return int32(m.data & 0x3F)
 }
 
 func (m Move) Piece() Piece {
@@ -98,4 +98,12 @@ func (m Move) Spin() SpinType {
 
 func (m Move) Raw() uint16 {
 	return m.data
+}
+
+func (m Move) Cells() PieceCoordinates {
+	return PieceTable(m.Piece(), m.Rotation())
+}
+
+func (m Move) IsOkMove() bool {
+	return IsOkX(m.X()) && IsOkY(m.Y())
 }

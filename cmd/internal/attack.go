@@ -1,10 +1,10 @@
 package internal
 
 const (
-	Single uint8 = 0
-	Double uint8 = 1
-	Triple uint8 = 2
-	Quad   uint8 = 4
+	AttackSingle uint8 = 0
+	AttackDouble uint8 = 1
+	AttackTriple uint8 = 2
+	AttackQuad   uint8 = 4
 
 	SpinMini       uint8 = 0
 	Spin           uint8 = 0
